@@ -19,12 +19,12 @@ function ArticleList() {
 
     return (
         <>
-            <div>
-                <h1>Lista di articoli</h1>
-                <ul>
+            <div className="container mt-4">
+                <h2 className="mb-3">Lista di articoli</h2>
+                <ul className="list-group">
                     {
                         articles.map((article, index) => (
-                            <li key={index}>
+                            <li key={index} className="list-group-item">
                                 {article}
                             </li>
                         ))

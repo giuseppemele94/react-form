@@ -5,8 +5,9 @@ function App() {
 
   return (
     <>
-      
-      <h1>React Blog Form</h1>
+      <div className="container  mt-4">
+      <h1 className="mb-3">React Blog Form</h1>
+      </div>
       <ArticleList/>
       
     </>
