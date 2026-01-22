@@ -17,6 +17,9 @@ function ArticleList() {
     // creiamo la var di stato per gestire gli articoli
     const [articles, setArticles] = useState(initialArticles);
 
+    //   var di stato che gestisce valore di input
+    const [newArticle, setNewArticle] = useState('');
+
     return (
         <>
             <div className="container mt-4">
@@ -30,6 +33,20 @@ function ArticleList() {
                         ))
                     }
                 </ul>
+
+                {/*form per aggiungere nuovo articolo alla lista*/}
+                <form>
+                    <div className="input-group mb-3">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Nuovo articolo"
+                        value={newArticle}
+                        onChange={e => { setNewArticle(e.target.value) }}
+                    />
+                    <button className="btn btn-outline-secondary">Aggiungi</button>
+                </div>
+                </form>
             </div>
         </>
     )
