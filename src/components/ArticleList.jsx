@@ -20,6 +20,18 @@ function ArticleList() {
     //   var di stato che gestisce valore di input
     const [newArticle, setNewArticle] = useState('');
 
+
+    //funzione di gestione invio form
+    const addArticle = e => {
+        e.preventDefault();
+        //creo nuovo array aggiornato con i valori precendenti e il nuovo valore preso dall'input
+        const updateArticles = [...articles,newArticle];
+        //aggiorno quindi il mio arrayarticles con i valori del nuovo array 
+        setArticles(updateArticles); 
+        //ripulisco input 
+        setNewArticle(""); 
+    }
+
     return (
         <>
             <div className="container mt-4">
@@ -35,7 +47,7 @@ function ArticleList() {
                 </ul>
 
                 {/*form per aggiungere nuovo articolo alla lista*/}
-                <form>
+                <form onSubmit={addArticle}>
                     <div className="input-group mb-3">
                     <input
                         type="text"
