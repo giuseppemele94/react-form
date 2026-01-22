@@ -32,6 +32,14 @@ function ArticleList() {
         setNewArticle(""); 
     }
 
+    //funzione per rimuovere un articolo dall'array
+    const removeArticle = i => {
+        const updateArticles = articles.filter((article,indice)=> {
+            return indice !== i
+        });
+        setArticles(updateArticles); 
+    }
+
     return (
         <>
             <div className="container mt-4">
@@ -39,8 +47,14 @@ function ArticleList() {
                 <ul className="list-group">
                     {
                         articles.map((article, index) => (
-                            <li key={index} className="list-group-item">
+                            <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                                 {article}
+                                <button onClick={() =>removeArticle(index)}
+                                    className="btn btn-sm btn-outline-danger"
+                                    
+                                    >
+                                    <i className="bi bi-trash"></i>
+                                </button>
                             </li>
                         ))
                     }
