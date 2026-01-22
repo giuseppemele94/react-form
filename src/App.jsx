@@ -1,4 +1,4 @@
-
+import ArticleList from "./components/ArticleList"
 
 function App() {
   
@@ -7,7 +7,7 @@ function App() {
     <>
       
       <h1>React Blog Form</h1>
-      
+      <ArticleList/>
       
     </>
   )
